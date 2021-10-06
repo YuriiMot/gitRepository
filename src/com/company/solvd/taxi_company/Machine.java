@@ -1,10 +1,16 @@
 package com.company.solvd.taxi_company;
 
-public abstract class Machine implements Info {
+public abstract class Machine implements IInform {
     private String brand;
-    private int max_speed;
+    private int max_speed = 100;
     private int passenger_capacity;
+    private float fuelConsumption;
 
+    public Machine(String brand, int passenger_capacity, float fuelConsumption) {
+        this.brand = brand;
+        this.passenger_capacity = passenger_capacity;
+        this.fuelConsumption = fuelConsumption;
+    }
     @Override
     public void showInfo() {
         System.out.println("Brand machine: "+brand);

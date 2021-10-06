@@ -1,5 +1,5 @@
 package com.company.solvd.taxi_company;
 
-public interface Info {
+public interface IInform {
     public void showInfo();
 }

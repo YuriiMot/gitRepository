@@ -1,20 +1,13 @@
 package com.company.solvd.taxi_company;
 
 public class Main {
-    public static void main(String[] args){
-    Admin_Manager admin = new Admin_Manager();
-    Manager manager = new Manager();
-    Logistician logistician = new Logistician();
-    Taxi_Driver driver = new Taxi_Driver();
-    Taxi_Driver driver1 = new Taxi_Driver();
-    Taxi_Driver driver2 = new Taxi_Driver();
-    Mechanic mechanic = new Mechanic();
-
-    Car car = new Car();
-    Car car1 = new Car();
-    Motorcycle motorcycle = new Motorcycle();
-
-        System.out.println("Equals driver to driver1: "+driver.equals(driver1));
+    public static void main(String[] args) {
+        Car car = new Car("Vaz 2110", 4, 7.5f);
+        Manager manager = new Manager("Bob", 23, "Manager");
+        MainDirector mainDirector = new MainDirector("Bob", 35, "MainDirector");
+        Accountant accountant = new Accountant("Georg",25, "Accountant");
+        car.check_fuel();
+        mainDirector.performTask();
+        System.out.println("");
     }
-
 }
