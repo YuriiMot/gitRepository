@@ -3,6 +3,7 @@ package com.company.solvd.taxi_company;
 import java.util.Objects;
 
 public abstract class Person implements IInform {
+
     private String name;
     private int age;
     private String gender;
@@ -36,10 +37,9 @@ public abstract class Person implements IInform {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", gender='" + gender + '\'' +
+        return "Person { " +
+                "name = '" + name + '\'' +
+                ", age = " + age + '\'' +
                 '}';
     }
 

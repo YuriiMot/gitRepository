@@ -1,6 +1,7 @@
 package com.company.solvd.taxi_company;
 
-public class Founder extends Person {
+public class Founder extends Employee {
+
     public Founder(String name, int age, String profession) {
         super(name, age, profession);
     }

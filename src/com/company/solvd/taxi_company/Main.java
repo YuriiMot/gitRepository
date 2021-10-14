@@ -1,13 +1,22 @@
 package com.company.solvd.taxi_company;
 
+import java.util.Scanner;
+
 public class Main {
+
     public static void main(String[] args) {
-        Car car = new Car("Vaz 2110", 4, 7.5f);
+        Scanner in = new Scanner(System.in);
+        Car car = new Car("Vaz 2110", 7.5f, 50, "Economy");
+        Car car1 = new Car("Renault", 8, 60, "Basic");
+        Car car2 = new Car("BMW", 10.0f , 70, "Premium");
+        Taxi_Driver driver = new Taxi_Driver("Roma", 25, "taxi driver", "Economy");
+        Taxi_Driver driver1 = new Taxi_Driver("Vasil", 32, "taxi driver", "Basic");
+        Taxi_Driver driver2 = new Taxi_Driver("Mykola", 23, "taxi driver", "Premium");
+        Client client = new Client("Oleg", 30);
         Manager manager = new Manager("Bob", 23, "Manager");
         MainDirector mainDirector = new MainDirector("Bob", 35, "MainDirector");
         Accountant accountant = new Accountant("Georg",25, "Accountant");
-        car.check_fuel();
-        mainDirector.performTask();
-        System.out.println("");
+        Logistician logistician = new Logistician("Vika", 21, "Logistician");
+        logistician.take_orders(car, car1, car2, driver, driver1, driver2, client);
     }
 }
