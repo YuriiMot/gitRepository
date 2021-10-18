@@ -2,7 +2,11 @@ package com.company.solvd.taxi_company;
 
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 public class Main {
+
+    // protected static final Logger LOGGER = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -18,5 +22,9 @@ public class Main {
         Accountant accountant = new Accountant("Georg",25, "Accountant");
         Logistician logistician = new Logistician("Vika", 21, "Logistician");
         logistician.take_orders(car, car1, car2, driver, driver1, driver2, client);
+        // LOGGER.info("This is my logger " + car.getBrand());
+        driver.showOrders();
+        driver1.showOrders();
+        driver2.showOrders();
     }
 }

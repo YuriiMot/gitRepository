@@ -2,5 +2,5 @@
 /shelf/
 .idea
 /out
-src/ConvertDecimalNum.java
+src/main/java/ConvertDecimalNum.java
 gitRepository.iml

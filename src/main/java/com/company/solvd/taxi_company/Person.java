@@ -14,12 +14,6 @@ public abstract class Person implements IInform {
         this.age = age;
     }
 
-    public Person(String name, int age, String profession) {
-        this.name = name;
-        this.age = age;
-        this.profession = profession;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

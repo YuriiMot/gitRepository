@@ -6,7 +6,10 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Root level="error">
+        <Logger name="com.company.solvd.Main" level="info">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="info">
             <AppenderRef ref="Console"/>
         </Root>
     </Loggers>
