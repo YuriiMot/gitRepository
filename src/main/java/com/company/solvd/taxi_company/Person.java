@@ -1,13 +1,18 @@
 package com.company.solvd.taxi_company;
 
+import com.company.solvd.taxi_company.enums.Profession;
+import org.apache.log4j.Logger;
+
 import java.util.Objects;
 
 public abstract class Person implements IInform {
 
+    protected static final Logger LOGGER = Logger.getLogger(Person.class);
+
     private String name;
     private int age;
     private String gender;
-    private String profession;
+    private Profession profession;
 
     public Person(String name, int age) {
         this.name = name;
@@ -39,9 +44,9 @@ public abstract class Person implements IInform {
 
     @Override
     public void showInfo() {
-        System.out.println("My name: " + getName());
-        System.out.println("I am " + getAge());
-        System.out.println("My work is " + getProfession());
+        LOGGER.info("My name: " + getName());
+        LOGGER.info("I am " + getAge());
+        LOGGER.info("My work is " + getProfession());
     }
 
     public String getName() {
@@ -69,18 +74,18 @@ public abstract class Person implements IInform {
     }
 
     public String getProfession() {
-        return profession;
+        return profession.getProfession();
     }
 
-    public void setProfession(String profession) {
+    public void setProfession(Profession profession) {
         this.profession = profession;
     }
 
     public void eat() {
-        System.out.println("I am eating");
+        LOGGER.info("I am eating");
     }
 
     public void sleep() {
-        System.out.println("I am sleeping");
+        LOGGER.info("I am sleeping");
     }
 }

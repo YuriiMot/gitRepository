@@ -15,5 +15,4 @@ public enum ClassAuto {
     public String getClassAuto() {
         return classAuto;
     }
-
 }

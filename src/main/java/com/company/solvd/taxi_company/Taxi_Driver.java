@@ -1,53 +1,60 @@
 package com.company.solvd.taxi_company;
 
+import com.company.solvd.taxi_company.enums.ClassAuto;
+import com.company.solvd.taxi_company.enums.Profession;
+import org.apache.log4j.Logger;
+
 import java.util.LinkedList;
 
 public class Taxi_Driver extends Employee {
-    private String driveClassAuto;
+
+    protected static final Logger LOGGER = Logger.getLogger(Taxi_Driver.class);
+
+    private ClassAuto driveClassAuto;
     LinkedList<String> linkedList = new LinkedList<>();
-
-    public Taxi_Driver(String name, int age, String profession) {
+    public String x = "2";
+    public int i = 1;
+    public Taxi_Driver(String name, int age, Profession profession) {
         super(name, age, profession);
     }
 
-    public Taxi_Driver(String name, int age, String profession, String driveClassAuto) {
+    public Taxi_Driver(String name, int age, Profession profession, ClassAuto driveClassAuto) {
         super(name, age, profession);
         this.driveClassAuto = driveClassAuto;
     }
 
-    public void setDriveClassAuto(String driveClassAuto) {
+    public void setDriveClassAuto(ClassAuto driveClassAuto) {
         this.driveClassAuto = driveClassAuto;
     }
 
-    public String getDriveClassAuto() {
+    public ClassAuto getDriveClassAuto() {
         return driveClassAuto;
     }
 
     public void completeOrder() {
         if(!linkedList.isEmpty()) {
-            System.out.println("I complete the order № 1:");
-            System.out.println(linkedList.getFirst());
+            LOGGER.info("I complete the order № 1\n" + linkedList.stream().findFirst());
             linkedList.removeFirst();
         } else {
             try {
                 throw new ArrayIndexOutOfBoundsException("Array is Empty!");
             } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println("Taxi driver has no orders!");
+                LOGGER.info("Taxi driver has no orders!");
             }
         }
     }
 
     public void showOrders() {
         if(linkedList.size() > 0){
-            for(int i = 0; i < linkedList.size(); i++) {
-                System.out.println("Order № " + i + ":");
-                System.out.println(linkedList.get(i) + "\n");
-            }
+
+            linkedList.stream().forEach(e -> LOGGER.info("Order № " + i++ + ":\n" + e));
+            i = 1;
+        
         } else {
             try {
                 throw new ArrayIndexOutOfBoundsException("Array is empty");
             } catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println("Taxi driver has no orders!");
+                LOGGER.info("Taxi driver has no orders!");
             }
         }
     }

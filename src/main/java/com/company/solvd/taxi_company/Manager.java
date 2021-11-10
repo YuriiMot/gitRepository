@@ -1,12 +1,14 @@
 package com.company.solvd.taxi_company;
 
+import com.company.solvd.taxi_company.enums.Profession;
+
 public class Manager extends Employee {
 
-    public Manager(String name, int age, String profession) {
+    public Manager(String name, int age, Profession profession) {
         super(name, age, profession);
     }
 
     public void hire(){
-        System.out.println("I'm manager. I am hiring new employees.");
+        LOGGER.info("I'm manager. I am hiring new employees.");
     }
 }

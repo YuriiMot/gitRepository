@@ -1,4 +1,9 @@
+import com.company.solvd.taxi_company.Main;
+import org.apache.log4j.Logger;
+
 class SelectionSort {
+
+    protected static final Logger LOGGER = Logger.getLogger(SelectionSort.class);
 
     void sort(int arr[]) {  // Сортування масиву
         int n = arr.length;
@@ -16,10 +21,10 @@ class SelectionSort {
 
     void printArr(int arr[]) {   // Виведення масиву на екран
         int n = arr.length;
-        System.out.println("Sorted array: ");
+        LOGGER.info("Sorted array: ");
         for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
+            LOGGER.info(arr[i] + " ");
+        LOGGER.info("");
     }
 
     public static void main(String arg[]) {

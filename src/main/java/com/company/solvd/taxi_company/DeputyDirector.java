@@ -1,12 +1,14 @@
 package com.company.solvd.taxi_company;
 
+import com.company.solvd.taxi_company.enums.Profession;
+
 public class DeputyDirector extends Employee {
 
-    public DeputyDirector(String name, int age, String profession) {
+    public DeputyDirector(String name, int age, Profession profession) {
         super(name, age, profession);
     }
 
     public void performTask() {
-        System.out.println("I`m deputy director. I perform the task of the main director.");
+        LOGGER.info("I`m deputy director. I perform the task of the main director.");
     }
 }

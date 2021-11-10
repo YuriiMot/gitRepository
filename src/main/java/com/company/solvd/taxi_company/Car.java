@@ -1,26 +1,32 @@
 package com.company.solvd.taxi_company;
 
+import com.company.solvd.taxi_company.enums.BrandAuto;
+import com.company.solvd.taxi_company.enums.ClassAuto;
+import org.apache.log4j.Logger;
+
 public class Car extends Vehicle {
+
+    protected static final Logger LOGGER = Logger.getLogger(Car.class);
 
     private int max_fuel;
     private int fuel;
-    private String classAuto = "Basic";   // "Economy", "Basic", "Premium"
+    private ClassAuto classAuto;   // "Economy", "Basic", "Premium"
 
-    public Car(String brand, float fuelConsumption, float consumption) {
+    public Car(BrandAuto brand, float fuelConsumption, float consumption) {
         super(brand, fuelConsumption);
     }
 
-    public Car(String brand, float fuelConsumption, int averageSpeed, String classAuto) {
+    public Car(BrandAuto brand, float fuelConsumption, int averageSpeed, ClassAuto classAuto) {
         super(brand, fuelConsumption, averageSpeed);
         this.classAuto = classAuto;
     }
 
-    public void setClassAuto(String classAuto) {
+    public void setClassAuto(ClassAuto classAuto) {
         this.classAuto = classAuto;
     }
 
     public String getClassAuto() {
-        return classAuto;
+        return classAuto.getClassAuto();
     }
 
     public int getMax_fuel() {
@@ -40,6 +46,6 @@ public class Car extends Vehicle {
     }
 
     public void check_fuel() {
-        System.out.println("I have " + fuel + " liter of fuel");
+        LOGGER.info("I have " + fuel + " liter of fuel");
     }
 }

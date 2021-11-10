@@ -1,12 +1,14 @@
 package com.company.solvd.taxi_company.сar_repair_shop;
 
+import com.company.solvd.taxi_company.enums.Profession;
+
 public class Locksmith extends LocksmithJunior {
 
-    public Locksmith(String name, int age, String profession) {
+    public Locksmith(String name, int age, Profession profession) {
         super(name, age, profession);
     }
 
     public void makePartsMidLevel() {
-        System.out.println("I make mid-level spare parts.");
+        LOGGER.info("I make mid-level spare parts.");
     }
 }
